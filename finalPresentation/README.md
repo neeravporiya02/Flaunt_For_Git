@@ -1,2 +1,2 @@
 # Flaunt
-Final Project Presentation files goes here.
+Final Project Presentation approved files will be hosted here.
