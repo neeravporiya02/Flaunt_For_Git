@@ -1,2 +1,2 @@
 # Flaunt
- Flaunt Website for GIt
+ About Flaunt Website and basic setup steps
