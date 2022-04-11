@@ -1,2 +1,2 @@
-# Flaut
+# Flaunt
  Flaunt Website for GIt
