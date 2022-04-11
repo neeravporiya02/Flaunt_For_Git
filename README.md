@@ -3,3 +3,11 @@
 
 <p>
 Flaunt is all about celebrating the star in each woman, and being her confidante and companion as she embarks on her own journey to discover her unique identity and personal style. From the widest selection of genuine beauty products from around the world to beauty advice, Flaunt is truly passionate about catering to your every beauty and wellness need. Because after all, Your Beauty is Our Passion.</p>
+
+# Vision
+Provide customers with best Beauty, Wellness and Health Products
+
+#Mission
+To create a world where our consumers have access to a finely curated, authentic product and service that delight and elevate the human spirit.
+
+# Code Related Help!!!
