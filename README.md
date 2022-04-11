@@ -7,7 +7,7 @@ Flaunt is all about celebrating the star in each woman, and being her confidante
 # Vision
 Provide customers with best Beauty, Wellness and Health Products
 
-#Mission
+# Mission
 To create a world where our consumers have access to a finely curated, authentic product and service that delight and elevate the human spirit.
 
 # Code Related Help!!!
