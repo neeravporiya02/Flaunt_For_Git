@@ -1,0 +1,112 @@
+USE [Flaunt]
+GO
+/****** Object:  Table [dbo].[Card_Details]    Script Date: 18/04/2022 22:17:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Card_Details](
+	[Card_ID] [int] IDENTITY(1,1) NOT NULL,
+	[Cust_ID] [varchar](50) NULL,
+	[cardNumber] [varchar](50) NULL,
+	[cvv] [varchar](50) NULL,
+	[cardType] [varchar](50) NULL,
+	[exp_Date] [varchar](50) NULL,
+	[createdBy] [varchar](50) NULL,
+	[createdDate] [datetime] NULL,
+	[modifiedBy] [varchar](50) NULL,
+	[modifiedDate] [datetime] NULL,
+	[Flag] [int] NULL,
+ CONSTRAINT [PK_Card_Details] PRIMARY KEY CLUSTERED 
+(
+	[Card_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Coupon_Master]    Script Date: 18/04/2022 22:17:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Coupon_Master](
+	[Coupon_ID] [int] IDENTITY(1,1) NOT NULL,
+	[Cust_ID] [varchar](50) NULL,
+	[couponCode] [varchar](50) NULL,
+	[discountAmount] [varchar](50) NULL,
+	[expiry] [varchar](50) NULL,
+	[createdBy] [varchar](50) NULL,
+	[createdDate] [datetime] NULL,
+	[modifiedBy] [varchar](50) NULL,
+	[modifiedDate] [datetime] NULL,
+	[Flag] [int] NULL,
+ CONSTRAINT [PK_Coupon_Master] PRIMARY KEY CLUSTERED 
+(
+	[Coupon_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Customer]    Script Date: 18/04/2022 22:17:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Customer](
+	[Cust_ID] [int] IDENTITY(1,1) NOT NULL,
+	[userName] [varchar](50) NULL,
+	[password] [varchar](50) NULL,
+	[fName] [varchar](50) NULL,
+	[lName] [varchar](50) NULL,
+	[email] [varchar](50) NULL,
+	[phoneNo] [varchar](50) NULL,
+	[Address] [varchar](100) NULL,
+	[House] [varchar](50) NULL,
+	[city] [varchar](50) NULL,
+	[state] [varchar](50) NULL,
+	[zipCode] [varchar](50) NULL,
+	[profilePic] [varchar](50) NULL,
+	[createdBy] [varchar](50) NULL,
+	[createdDate] [datetime] NULL,
+	[modifiedBy] [varchar](50) NULL,
+	[modifiedDate] [datetime] NULL,
+	[Flag] [int] NULL,
+ CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
+(
+	[Cust_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Product]    Script Date: 18/04/2022 22:17:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Product](
+	[Product_ID] [int] IDENTITY(1,1) NOT NULL,
+	[SKU_ID] [varchar](50) NULL,
+	[ProductName] [varchar](50) NULL,
+	[ProductCategory] [varchar](50) NULL,
+	[ProductSubCategory] [varchar](50) NULL,
+	[Brand] [varchar](50) NULL,
+	[ProductImage] [varchar](50) NULL,
+	[Image1] [varchar](50) NULL,
+	[Image2] [varchar](50) NULL,
+	[Image3] [varchar](50) NULL,
+	[Image4] [varchar](50) NULL,
+	[Image5] [varchar](50) NULL,
+	[Nutrition Fact] [varchar](50) NULL,
+	[Price] [varchar](50) NULL,
+	[Weight] [varchar](50) NULL,
+	[Units] [varchar](50) NULL,
+	[ExpiryDate] [varchar](50) NULL,
+	[AvailableStock] [varchar](50) NULL,
+	[createdBy] [varchar](50) NULL,
+	[createdDate] [datetime] NULL,
+	[modifiedBy] [varchar](50) NULL,
+	[modifiedDate] [datetime] NULL,
+	[Flag] [int] NULL,
+ CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+(
+	[Product_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
