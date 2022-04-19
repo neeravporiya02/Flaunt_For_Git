@@ -1,0 +1,23 @@
+{
+  "groups": [
+    {
+      "name": "app",
+      "type": "com.neml.enam.configuration.AppConfiguration",
+      "sourceType": "com.neml.enam.configuration.AppConfiguration"
+    },
+    {
+      "name": "app.config",
+      "type": "com.neml.enam.configuration.AppConfiguration$Config",
+      "sourceType": "com.neml.enam.configuration.AppConfiguration",
+      "sourceMethod": "public com.neml.enam.configuration.AppConfiguration.Config getConfig() "
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.config.file",
+      "type": "java.lang.String",
+      "sourceType": "com.neml.enam.configuration.AppConfiguration$Config"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,68 @@
+package com.neml.enam.bean;
+
+public class TraderBean {
+	
+	private String licno;
+	private String tradernm;
+	private String uniqkeyhash;
+	private String statecode;
+	private String dateTimestamp;
+	
+	
+	public TraderBean() {
+		
+	}
+	
+	public TraderBean(String licno, String tradernm, String uniqkeyhash, String statecode, String dateTimestamp) {
+		super();
+		this.licno = licno;
+		this.tradernm = tradernm;
+		this.uniqkeyhash = uniqkeyhash;
+		this.statecode = statecode;
+		this.dateTimestamp = dateTimestamp;
+	}
+
+	public String getLicno() {
+		return licno;
+	}
+
+	public void setLicno(String licno) {
+		this.licno = licno;
+	}
+
+	public String getTradernm() {
+		return tradernm;
+	}
+
+	public void setTradernm(String tradernm) {
+		this.tradernm = tradernm;
+	}
+
+	public String getUniqkeyhash() {
+		return uniqkeyhash;
+	}
+
+	public void setUniqkeyhash(String uniqkeyhash) {
+		this.uniqkeyhash = uniqkeyhash;
+	}
+
+	public String getStatecode() {
+		return statecode;
+	}
+
+	public void setStatecode(String statecode) {
+		this.statecode = statecode;
+	}
+
+	public String getDateTimestamp() {
+		return dateTimestamp;
+	}
+
+	public void setDateTimestamp(String dateTimestamp) {
+		this.dateTimestamp = dateTimestamp;
+	}
+	
+	
+	
+
+}
