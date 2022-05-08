@@ -23,7 +23,7 @@ public class CORSFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) res;
 		
 		//String[] allowDomain = {"http://localhost:8080","http://trade.neml.in", "https://trade.neml.in"};
-		String[] allowDomain = {"localhost:8080"};
+		String[] allowDomain = {"http://localhost:3000"};
 		Set<String> allowedOrigins = new HashSet<String>(Arrays.asList (allowDomain));
 		
 		HttpServletRequest httpReq = (HttpServletRequest) req;
@@ -41,7 +41,7 @@ public class CORSFilter implements Filter {
 			response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
 			response.setHeader("Expires", "0"); // Proxies.
 			response.setHeader("Content-Type", ""); // Content-Type.
-			response.setHeader("Access-Control-Allow-Origin", originHeader);
+			response.setHeader("Access-Control-Allow-Origin", "*");
 			chain.doFilter(req, res);
 		}else{
 			
@@ -52,7 +52,7 @@ public class CORSFilter implements Filter {
 			response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
 			response.setHeader("Expires", "0"); // Proxies.
 			response.setHeader("Content-Type", ""); // Content-Type.
-			response.setHeader("Access-Control-Allow-Origin", originHeader);
+			response.setHeader("Access-Control-Allow-Origin", "*");
 			chain.doFilter(req, res);
 			
 			//((HttpServletResponse) response)

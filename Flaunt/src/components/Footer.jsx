@@ -9,7 +9,7 @@ const Footer = () => {
                 <aside className="col-12 col-sm-12 col-lg-3">
                   <article className="me-lg-4">
                     <a className="navbar-brand" href="home.html">
-                      <span className=""><img alt='FlauntLogo' src="http://webpage.pace.edu/np57411n/cs641/Project1/Flaunt/assets/images/Flogo.png" className="m-2" width="150px" /> </span>
+                      <span className=""><img alt='FlauntLogo' src=" /images/Flogo.png" className="m-2" width="150px" /> </span>
                     </a>
                   </article>
                 </aside>

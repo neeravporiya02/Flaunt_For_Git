@@ -9,8 +9,10 @@ a.title, .title a, a .title {
   text-decoration: none;
 }
 a.title:hover, .title a:hover, a .title:hover {
-  color: #0a58ca;
+  /* color: #0a58ca; */
   text-decoration: underline;
+  /* Code change by Neerav */
+  color:#db1384;
 }
 
 .content-body {
@@ -257,7 +259,8 @@ a:hover > .img-thumbnail {
   font-size: 24px;
 }
 .menu-aside .menu-item.active .icon {
-  color: #0d6efd;
+  /* color: #0d6efd; */
+  color:#db1384;
 }
 .menu-aside .menu-item.active .menu-link {
   background-color: #d7e7ff;
@@ -329,7 +332,8 @@ a:hover > .img-thumbnail {
   color: #212529;
 }
 .nav-icontop a.nav-link.active i, .nav-icontop a.nav-link.active .text {
-  color: #0d6efd;
+  /* color: #0d6efd; */
+  color:#db1384;
 }
 
 .nav-ondark .active {
@@ -612,6 +616,9 @@ a:hover > .img-thumbnail {
   background-color: #fff;
   border-color: #dee2e6;
   color: #212529;
+
+  /* Code by Neerav */
+  margin-left: 10px;
 }
 .btn-light i {
   color: #9DA1A7;

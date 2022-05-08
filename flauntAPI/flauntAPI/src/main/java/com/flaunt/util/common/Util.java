@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 public class Util {
 
-	private static final Logger flauntAPILog = LoggerFactory.getLogger("flauntAPILog");
+	private static final Logger flauntAPILog = LoggerFactory.getLogger("flauntAPI");
 	private static final Logger errorLog = LoggerFactory.getLogger("error");
 	
 	private static Properties resource = null;

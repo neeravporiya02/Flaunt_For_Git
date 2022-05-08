@@ -39,4 +39,26 @@ public class Constants {
 		 
 		 
 	public static final String DATABASE_TYPE ="databaseType";
+	
+	public interface InsertStatus{
+		 String SUCCESS = "200";
+		 String FAILURE = "201";
+		 String DBERROR = "203";
+		 String SOME_OTHER_ERROR = "204";
+		 String SUCCESS_MESSAGE = "SUCCESS!!";
+		 String FAILURE_MESSAGE = "SOME ERROR OCCURED!!";
+	}
+	
+	public interface UpdateStatus{
+		 String SUCCESS = "200";
+		 String FAILURE = "201";
+	}
+	
+	public interface Response
+	{
+		public static final String SUCCESS="200";
+		public static final String ERROR="201";
+		public static final String MESSAGE="";
+		
+	}
 }
