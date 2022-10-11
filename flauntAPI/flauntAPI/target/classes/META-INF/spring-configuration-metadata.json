@@ -1,0 +1,23 @@
+{
+  "groups": [
+    {
+      "name": "app",
+      "type": "com.flaunt.configuration.AppConfiguration",
+      "sourceType": "com.flaunt.configuration.AppConfiguration"
+    },
+    {
+      "name": "app.config",
+      "type": "com.flaunt.configuration.AppConfiguration$Config",
+      "sourceType": "com.flaunt.configuration.AppConfiguration",
+      "sourceMethod": "getConfig()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.config.file",
+      "type": "java.lang.String",
+      "sourceType": "com.flaunt.configuration.AppConfiguration$Config"
+    }
+  ],
+  "hints": []
+}
