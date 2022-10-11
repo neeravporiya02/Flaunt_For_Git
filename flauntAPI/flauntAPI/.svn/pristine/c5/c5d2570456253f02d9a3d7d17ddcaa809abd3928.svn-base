@@ -1,9 +1,0 @@
-package com.neml.enam.dao;
-
-import com.neml.enam.bean.Employee;
-
-public interface EmployeeDAO {
-	
-	public void getEmplyee(Employee employee);
-	
-}

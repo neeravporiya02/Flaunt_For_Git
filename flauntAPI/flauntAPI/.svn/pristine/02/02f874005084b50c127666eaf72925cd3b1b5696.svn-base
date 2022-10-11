@@ -1,9 +1,0 @@
-package com.neml.enam.service;
-
-import com.neml.enam.bean.Employee;
-
-public interface EmployeeService {
-	
-	public void getEmployee(Employee employee);
-
-}
