@@ -5,7 +5,7 @@ import validate from './validateInfo';
 import './UserLogin.css';
 import axios, { Axios } from 'axios';
 import { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 
@@ -51,13 +51,13 @@ export const UserLogin = () => {
                                 <div className="mb-4">
                                     {
                                         status 
-                                        ? <Redirect to={`/home/${email}`}> <button type="submit" className="btn btn-primary w-100"> Login </button> </Redirect> 
+                                        ? <Link to={`/home/${email}`}> <button type="submit" className="btn btn-primary w-100"> Login </button> </Link> 
                                         :<button type="submit" className="btn btn-primary w-100"> Login </button>
                                     }
                                     
                                 </div>
                                 <div className="mb-3">
-                                    <a href='#'>Forgot Password</a>
+                                    <Link to='/'>Forgot Password</Link>
                                 </div>
                                 {/* </form> */}
                                 <hr />

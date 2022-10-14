@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import useForm from './useForm';
 import validate from './validateInfo';
 import './UserRegistration.css'
-import { NavLink } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const UserSignUp = () => {
-    const { handleChange, values,handleSignUpSubmit, errors,email,status } = useForm(validate);
+    const { handleChange, values,handleSignUpSubmit, errors,status } = useForm(validate);
     return (
         <div>
             <section style={{ float: 'left' }}>
@@ -108,7 +107,7 @@ const UserSignUp = () => {
                                     
                                     {
                                         status 
-                                        ? <Redirect to={`/login`}> <button type="submit" className="btn btn-primary w-100"> Sign Up </button> </Redirect> 
+                                        ? <Link to={`/login`}> <button type="submit" className="btn btn-primary w-100"> Sign Up </button> </Link> 
                                         :<button type="submit" className="btn btn-primary w-100"> Sign Up </button>
                                     }
                                         
@@ -116,7 +115,7 @@ const UserSignUp = () => {
                                 </div>
 
                                 <hr />
-                                <p className="text-center mb-2">Already have account? <a href='#'>Sign in</a></p>
+                                <p className="text-center mb-2">Already have account? Sign in</p>
                             </div>
                         </div>
                     </section>

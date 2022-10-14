@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -8,33 +9,35 @@ const Footer = () => {
               <div className="row">
                 <aside className="col-12 col-sm-12 col-lg-3">
                   <article className="me-lg-4">
-                    <a className="navbar-brand" href="home.html">
+                    <Link to={`/`} className="navbar-brand">
                       <span className=""><img alt='FlauntLogo' src=" /images/Flogo.png" className="m-2" width="150px" /> </span>
-                    </a>
+                    </Link>
                   </article>
                 </aside>
                 <aside className="col-6 col-sm-4 col-lg-2">
                   <h6 className="title">Store</h6>
                   <ul className="list-menu">
-                    <li> <a href="About_us.html" target="_blank">Who Are We</a></li>
+                    <li><Link to={`/About_Us`}> Who Are We</Link> </li>
                   </ul>
                 </aside>
                 <aside className="col-6 col-sm-4 col-lg-2">
                   <h6 className="title">Information</h6>
                   <ul className="list-menu">
-                    <li> <a href="Terms_and_Conditions.html" target="_blank">Terms & Conditions</a></li>
+                  <Link to='/TAC'> Terms and Conditions</Link>
                   </ul>
                 </aside>
                 <aside className="col-6 col-sm-4  col-lg-2">
                   <h6 className="title">FAQs</h6>
                   <ul className="list-menu">
-                    <li> <a href="Frequently_Asked_Questions.html" target="_blank"> Frequently Asked Questions </a></li>
+                    <li> 
+                      <Link to='/FAQ'> Frequently Asked Questions</Link>
+                    </li>
                   </ul>
                 </aside>
                 <aside className="col-6 col-sm-4  col-lg-2">
                   <h6 className="title">Contact</h6>
                   <ul className="list-menu">
-                    <li> <a href="Contact_us.html" target="_blank"> Contact Us </a></li>
+                    <li> <Link to={`/Contact_Us`}> Contact Us </Link></li>
                   </ul>
                 </aside>
 

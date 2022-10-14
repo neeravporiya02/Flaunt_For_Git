@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 
 const useForm = (validate) => {
@@ -17,7 +17,7 @@ const useForm = (validate) => {
   const [message, setMessage] = useState("");
   let [email, setEmail] = useState();
   const [status, setStatus] = useState(false);
-  let history = useHistory();
+  // let history = useHistory();
   const handleChange = e => {
     const { name, value } = e.target
 
@@ -50,7 +50,7 @@ const useForm = (validate) => {
       .then((data) => {
         console.log(data);
         // -- If the status code is 200
-        if (data[0] == 200) {
+        if (data[0] === 200) {
           setMessage("User Login successful");
           setEmail(values.email);
           
@@ -95,7 +95,7 @@ const useForm = (validate) => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        if (data[0] == 200) {
+        if (data[0] === 200) {
           setMessage("User Created Successfully...");
           setEmail(values.email);
           setStatus(true);
