@@ -3,6 +3,22 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 const Home = () => {
     const {email} = useParams();
+
+    let [email1, setEmail1] = useState();
+
+    email1 = "np57411n@pace.edu";
+    console.log(email);
+
+    if(email === undefined || email === ''){
+        
+        setEmail1 = email1;
+    }
+    else{
+        setEmail1 = email
+    }
+
+    
+
     return (
         <div>
             <div className="container-fluid p-3">
@@ -19,15 +35,16 @@ const Home = () => {
                 <div className="order-lg-last col-lg-5 col-sm-8 col-8 ms-auto">
                     <div className="float-end dropdown">
                         {
-                            email ? 
+                            setEmail1 ? 
                             <div>
                             <a className="btn btn-light dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Hi {email}
+                            Hi {setEmail1}
                         </a>
+                        
                         <ul className="dropdown-menu" style={{zIndex:"1"}} aria-labelledby="dropdownMenuLink">
-                            <li><a className="dropdown-item" href="#">Profile</a></li>
+                            <li><Link className="dropdown-item" to={`/UserProfile`}>Profile</Link></li>
                             <li><a className="dropdown-item" href="#">Orders</a></li>
-                            <li><Link to={`/`}><a className="dropdown-item" href="#">Sign out</a></Link></li>
+                            <li><Link to={`/`} className="dropdown-item">Sign out</Link></li>
                         </ul>
                         </div>
                             : <Link to="/login" className="btn btn-light btnSpacing"><i className="fa fa-user"></i>  <span className="ms-1 d-none d-sm-inline-block"> </span> Sign in </Link>

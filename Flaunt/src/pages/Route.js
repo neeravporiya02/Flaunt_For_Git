@@ -13,6 +13,7 @@ import {Terms_and_Conditions as TAC} from './Terms_and_Conditions';
 import { Contact_Us as Contactus} from './Contact_Us';
 import About_Us from './About_Us';
 import { Product } from './Product';
+import {User_Profile as UserProfile} from './User_Profile';
 
 function Routejs() {
     return (
@@ -22,7 +23,7 @@ function Routejs() {
                     {/* <Header/> */}
                     <Routes>
                         <Route exact path="/" element={ <Home />} />
-                        <Route exact path="/home/:email?" element={ <Home/> } />
+                        <Route exact path="/:email?" element={ <Home/> } />
                         <Route exact path="/login" element={ <UserLogin/> } />
                         <Route exact path="/register" element= { <UserSignUp/> } />
                         <Route exact path="/FAQ" element={ <FAQ/> } />
@@ -30,6 +31,7 @@ function Routejs() {
                         <Route exact path="/Contact_Us" element={ <Contactus/> } />
                         <Route exact path="/About_Us" element={ <About_Us/> } />
                         <Route exact path="/Product" element={ <Product/> } />
+                        <Route exact path="/UserProfile" element={ <UserProfile/> } />
                     </Routes>
                     <Footer />
                 </Router>
