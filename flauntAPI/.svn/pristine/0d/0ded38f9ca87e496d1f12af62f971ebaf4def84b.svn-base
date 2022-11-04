@@ -1,0 +1,2 @@
+server.port=8082
+app.config.file=D:\\UMPeMandiConfig\\ENAMConfig.cfg
