@@ -17,10 +17,16 @@ public class UserRegistrationServiceImpl implements UserRegistrationService{
 	
 	@Override
 	public List<Object> registerUser(UserRegistration userRegistration) {
-
 		return userRegistrationDAO.registerUser(userRegistration);
-
 	}
-
 	
+	@Override
+	public List<Object> getCustomerDetailsById(int custId) {
+		return userRegistrationDAO.getCustomerDetailsById(custId);
+	}
+	
+	@Override
+	public List<Object> deleteUserById(int custId) {
+		return userRegistrationDAO.deleteUserById(custId);
+	}
 }

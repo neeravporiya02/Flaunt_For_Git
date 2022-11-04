@@ -23,7 +23,7 @@ public class CORSFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) res;
 		
 		//String[] allowDomain = {"http://localhost:8080","http://trade.neml.in", "https://trade.neml.in"};
-		String[] allowDomain = {"http://localhost:3000"};
+		String[] allowDomain = {"http://localhost:8080"};
 		Set<String> allowedOrigins = new HashSet<String>(Arrays.asList (allowDomain));
 		
 		HttpServletRequest httpReq = (HttpServletRequest) req;

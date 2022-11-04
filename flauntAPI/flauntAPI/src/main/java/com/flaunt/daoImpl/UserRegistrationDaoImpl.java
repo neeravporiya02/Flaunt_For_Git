@@ -121,6 +121,128 @@ public class UserRegistrationDaoImpl implements UserRegistrationDao{
 		flauntAPILog.info("Inside UserRegistrationDAOImpl -> registerUser");
 		return result;
 	}
+
+	@Override
+	public List<Object> deleteUserById(int custId) {
+		flauntAPILog.info("Inside UserRegistrationDAOImpl -> deleteUserById");
+		List<Object> result = new ArrayList<Object>();
+		StringBuffer sbuf = null;
+		QueryMaster qm = new QueryMaster();
+		List<Object> paramList = new ArrayList<Object>();
+		Connection con = null;
+		int count = 0;
+		
+		try {
+			if(!Util.isNeitherNullNorEmpty(custId)) {
+				result.add(Constants.Response.ERROR);
+				result.add("CustId not provided!");
+				return result;
+			}
+			
+			con = DBConnection.getDBConnection();
+			sbuf = new StringBuffer();
+			
+			sbuf.append("DELETE FROM CUSTOMER "
+					+ " WHERE cust_id=?");
+			
+			querylog.info("Query deleteUserById :" + sbuf.toString());
+			paramList.add(custId);
+						
+			count = qm.updateInsert(sbuf.toString(), paramList, con);
+			
+			if(count > 0){
+				result.add(Constants.InsertStatus.SUCCESS);
+				result.add(Constants.InsertStatus.SUCCESS_MESSAGE);
+			} else {
+				result.add(Constants.InsertStatus.FAILURE);
+				result.add(Constants.InsertStatus.FAILURE_MESSAGE);
+			}
+			
+		} catch (Exception e) {
+			errorlog.info(e.getMessage());
+			e.printStackTrace();
+			result.add(Constants.InsertStatus.DBERROR);
+			result.add(Constants.InsertStatus.FAILURE_MESSAGE);
+		} finally {
+			Util.closeRsPstmtNdConn(null, null, con);
+			qm.closeStatement();
+			qm = null;
+			sbuf = null;
+			paramList = null;
+		}
+		
+		flauntAPILog.info("Inside UserRegistrationDAOImpl -> deleteUserById");
+		return result;
+	}
+
+	@Override
+	public List<Object> getCustomerDetailsById(int custId) {
+		flauntAPILog.info("Inside UserRegistrationDAOImpl -> getCustomerDetailsById");
+		List<Object> result = new ArrayList<Object>();
+		
+		StringBuffer sbuf = null;
+		ResultSet rs = null;
+		QueryMaster qm = new QueryMaster();
+		List<Object> paramList = new ArrayList<Object>();
+		Connection con = null;
+		
+		try {
+			if(!Util.isNeitherNullNorEmpty(custId)) {
+				result.add(Constants.Response.ERROR);
+				result.add("CustId not provided!");
+				return result;
+			}
+			
+			con = DBConnection.getDBConnection();
+			sbuf = new StringBuffer();
+			
+			sbuf.append("SELECT * FROM CUSTOMER "
+					+ " WHERE cust_id=?");
+			
+			querylog.info("Query getCustomerDetailsById :" + sbuf.toString());
+			paramList.add(custId);
+			
+			rs = qm.select(sbuf.toString(), paramList, con);
+			UserRegistration userRegistrationObj;
+			if(rs.next()){
+				userRegistrationObj = new UserRegistration();
+				userRegistrationObj.setCustId(rs.getInt("cust_id"));
+				userRegistrationObj.setFirstName(rs.getString("fName"));
+				userRegistrationObj.setLastName(rs.getString("lName"));
+				userRegistrationObj.setEmail(rs.getString("email"));
+				userRegistrationObj.setAddress(rs.getString("address"));
+				userRegistrationObj.setHouse(rs.getString("house"));
+				userRegistrationObj.setCity(rs.getString("city"));
+				userRegistrationObj.setState(rs.getString("state"));
+				userRegistrationObj.setZipCode(rs.getString("zipCode"));
+				userRegistrationObj.setProfilePic(rs.getString("profilePic"));
+				
+				result.add(Constants.InsertStatus.SUCCESS);
+				result.add(Constants.InsertStatus.SUCCESS_MESSAGE);
+				result.add(userRegistrationObj);
+			} else {
+				result.add(Constants.InsertStatus.FAILURE);
+				result.add(Constants.InsertStatus.FAILURE_MESSAGE);
+			}
+			
+		} catch (Exception e) {
+			errorlog.info(e.getMessage());
+			e.printStackTrace();
+			result.add(Constants.InsertStatus.DBERROR);
+			result.add(Constants.InsertStatus.FAILURE_MESSAGE);
+		} finally {
+			Util.closeRsPstmtNdConn(null, null, con);
+			qm.closeStatement();
+			qm = null;
+			sbuf = null;
+			paramList = null;
+		}
+		
+		flauntAPILog.info("Inside UserRegistrationDAOImpl -> getCustomerDetailsById");
+		return result;
+	}
+	
+	
 	
 //	@Override
 //	public void getEmplyee(UserRegistration employee) {

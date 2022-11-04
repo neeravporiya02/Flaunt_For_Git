@@ -61,6 +61,7 @@ public class LoginDaoImpl implements LoginDao{
 			if (rs.next()) {
 				result.add(Constants.InsertStatus.SUCCESS);
 				result.add("Login Successful !!");
+				result.add(rs.getInt("cust_id"));
 			} else {
 				result.add(Constants.InsertStatus.FAILURE);
 				result.add("You have entered an invalid username or password.");

@@ -21,7 +21,7 @@ import com.flaunt.bean.UserRegistration;
 import com.flaunt.service.UserRegistrationService;
 import com.flaunt.util.common.Util;
 
-//@CrossOrigin(origins = {"http://localhost:8080"})
+@CrossOrigin(origins = {"http://localhost:8080"})
 @RestController
 public class UserRegistrationController {
 	
@@ -38,6 +38,28 @@ public class UserRegistrationController {
 		result = userRegistrationService.registerUser(userRegistration);
 
 		flauntAPILog.info("Inside UserRegistrationController -> registerUser");		
+		return new ResponseEntity<List<Object>>(result, HttpStatus.OK);
+	}
+	
+	@RequestMapping(path = "/getCustomerDetailsById/{custId}", method = RequestMethod.GET)
+	public ResponseEntity<List<Object>> getCustomerDetailsById(@PathVariable(value = "custId") int custId) {
+		flauntAPILog.info("Inside UserRegistrationController -> getCustomerDetailsById");
+		List<Object> result = new ArrayList<Object>();
+		
+		result = userRegistrationService.getCustomerDetailsById(custId);
+
+		flauntAPILog.info("Inside UserRegistrationController -> getCustomerDetailsById");		
+		return new ResponseEntity<List<Object>>(result, HttpStatus.OK);
+	}
+	
+	@RequestMapping(path = "/deleteUserById/{custId}", method = RequestMethod.GET)
+	public ResponseEntity<List<Object>> deleteUserById(@PathVariable(value = "custId") int custId) {
+		flauntAPILog.info("Inside UserRegistrationController -> deleteUserById");
+		List<Object> result = new ArrayList<Object>();
+		
+		result = userRegistrationService.deleteUserById(custId);
+
+		flauntAPILog.info("Inside UserRegistrationController -> deleteUserById");		
 		return new ResponseEntity<List<Object>>(result, HttpStatus.OK);
 	}	
 	

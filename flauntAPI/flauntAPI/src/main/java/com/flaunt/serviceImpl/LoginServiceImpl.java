@@ -17,9 +17,7 @@ public class LoginServiceImpl implements LoginService{
 	
 	@Override
 	public List<Object> login(Login login) {
-
 		return loginDao.login(login);
-
 	}
 
 	
