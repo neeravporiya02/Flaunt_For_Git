@@ -6,7 +6,7 @@ const Home = () => {
 
     let [email1, setEmail1] = useState();
 
-    email1 = "np57411n@pace.edu";
+    email1 = "";
     console.log(email);
 
     if(email === undefined || email === ''){
@@ -35,10 +35,10 @@ const Home = () => {
                 <div className="order-lg-last col-lg-5 col-sm-8 col-8 ms-auto">
                     <div className="float-end dropdown">
                         {
-                            setEmail1 ? 
+                            email ? 
                             <div>
                             <a className="btn btn-light dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Hi {setEmail1}
+                            Hi {email}
                         </a>
                         
                         <ul className="dropdown-menu" style={{zIndex:"1"}} aria-labelledby="dropdownMenuLink">
