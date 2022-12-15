@@ -238,11 +238,11 @@ const Payment = () => {
     </div>
     <div className="row">
 
-        <div className="col-lg-12">
+        <div className='container-fluid'>
 
-            <div className="ibox">
+            <div className="ibox container-fluid">
                 <div className="ibox-title">
-                    Payment method
+                    <h2>Payment Method</h2>
                 </div>
                 <div className="ibox-content">
 
@@ -262,22 +262,28 @@ const Payment = () => {
                                     <div className="row">
                                         <div className="col-md-4">
                                             <h2>Summary</h2>
-                                            <strong>Product:</strong>: Obsession By Calvin Klein <br />
-                                            <strong>Product:</strong>: Obsession By Calvin Klein <br />
-                                            <strong>Price:</strong>: <span className="text-navy">$252.90</span>
+                                            {
+                                            cart.map((prod) => (
+                                                <ListGroup.Item key={prod.id}>
+                                                    <Row>
+                                                        <Col ms={2}>
+                                                        <Image src={prod.image} alt={prod.name} fluid rounded />
+                                                        </Col>
+                                                    </Row>
+                                                    <Row>
+                                                        <Col>
+                                                            <span>{prod.name}</span>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row>
+                                                        <Col>
+                                                    <strong>Price:</strong>: <span className="text-navy">$ {total}</span>
 
-                                            <p className="m-t">
-                                                {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                nisi ut aliquip ex ea commodo consequat. */}
-
-                                            </p>
-                                            <p>
-                                                {/* Duis aute irure dolor
-                                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                                nulla pariatur. Excepteur sint occaecat cupidatat. */}
-                                            </p>
+                                                        </Col>
+                                                    </Row>
+                                                </ListGroup.Item>
+                                            ))
+                                            }
                                         </div>
                                         <div className="col-md-8">
 
@@ -287,7 +293,7 @@ const Payment = () => {
                                                         <div className="form-group">
                                                             <label>CARD NUMBER</label>
                                                             <div className="input-group">
-                                                                <input type="text" className="form-control" name="Number" placeholder="Valid Card Number" required="" />
+                                                                <input type="text" className="form-control" name="Number" placeholder="Valid Card Number" maxLength={12} required="" />
                                                                 <span className="input-group-addon"><i className="fa fa-credit-card"></i></span>
                                                             </div>
                                                         </div>
@@ -303,7 +309,7 @@ const Payment = () => {
                                                     <div className="col-xs-5 col-md-5 pull-right">
                                                         <div className="form-group">
                                                             <label>CV CODE</label>
-                                                            <input type="text" className="form-control" name="CVC" placeholder="CVC" required="" />
+                                                            <input type="text" className="form-control" name="CVC" type='password' maxLength={3} placeholder="CVC" required="" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -317,7 +323,7 @@ const Payment = () => {
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-xs-12">
-                                                        <button className="btn btn-primary" type="submit">Make a payment!</button>
+                                                        <Link to={'/OrderConfirmation'}><button className="btn btn-primary" type="button">Make a payment!</button></Link>
                                                     </div>
                                                 </div>
                                             </form>

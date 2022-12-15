@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import './EditUserProfile.css'
+import { Alert } from 'react-bootstrap';
 
-export const User_Profile = () => {
+export const User_ProfileEdit = () => {
 
     // const {email} = useParams();
     let [email, setEmail] = useState();
@@ -113,7 +114,12 @@ if(isConfirmed) {
         </section>
     {/* <!-- ============== SECTION PAGETOP END// ============== --> */}
 
-        
+    <Alert variant="success">
+      <Alert.Heading>Profile Updated</Alert.Heading>
+      <p>
+        Address is successfully updated in the system.
+      </p>
+    </Alert>
         {/* <!-- ============== SECTION CONTENT ============== --> */}
         <section class="padding-y bg-light mt-3">
         <div class="container">
@@ -145,7 +151,7 @@ if(isConfirmed) {
               </div>
               <figcaption class="info">
                 <h6 class="title">Mr. Neerav Poriya</h6>
-                <p>Email: nporiya@gmail.com, Phone: +1 (234)-567-8909 
+                <p>Email: nporiya@gmail.com, Phone: +1(234)-567-8909 
                   <Link to={'/EditUserProfile'} target='_blank'><i class="fa fa-pen"></i></Link>
                 </p>
               </figcaption>
@@ -163,7 +169,7 @@ if(isConfirmed) {
               <div class="col-md-6">
                 <article class="box  bg-light">
                   <b class="mx-2 text-muted"><i class="fa fa-map-marker-alt"></i></b> 
-                   Moscow city, Street name, Building lenin, House 77
+                   Jersey city, New Jersey, 07306, 20 Huron Ave, Apt. 18a
                 </article>
               </div> 
             </div> 

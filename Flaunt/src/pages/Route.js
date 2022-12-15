@@ -17,6 +17,9 @@ import {User_Profile as UserProfile} from './User_Profile';
 import Fragrance from '../components/Fragrance';
 import Cart from '../components/Cart'
 import Payment from '../components/Payment';
+import {EditUserProfile as EditProfile } from './EditUserProfile';
+import {User_ProfileEdit as UserProfileEdit } from './User_ProfileEdit';
+import {OrderConfirmation as OrderSubmit} from './OrderConfimation';
 
 function Routejs() {
     return (
@@ -35,10 +38,13 @@ function Routejs() {
                         <Route exact path="/About_Us" element={ <About_Us/> } />
                         <Route exact path="/Product" element={ <Product/> } />
                         <Route exact path="/UserProfile" element={ <UserProfile/> } />
+                        <Route exact path="/UserProfileEdit" element={ <UserProfileEdit/> } />
 
                         <Route path='/Fragrance' exact element={ <Fragrance />} />
                         <Route path='/cart' exact element={<Cart />} />
                         <Route path='/Payment' exact element={<Payment />} />
+                        <Route path='/EditUserProfile' exact element={<EditProfile />} />
+                        <Route path='/OrderConfirmation' exact element={<OrderSubmit />} />
                     </Routes>
                     <Footer />
                 </Router>

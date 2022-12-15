@@ -1,12 +1,41 @@
 import React from 'react'
-import { useParams, Link } from "react-router-dom";
-export const Frequently_Asked_Questions = () => {
-    const { email } = useParams();
+import { useState } from "react";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import './EditUserProfile.css'
+import { Alert } from 'react-bootstrap';
 
+export const OrderConfirmation = () => {
+
+    // const {email} = useParams();
+    let [email, setEmail] = useState();
+    let [isDeleted, setIsDeleted] = useState(false);
+
+    setEmail = "np57411n@pace.edu";
+
+    const handleClick = () => {
+        document.getElementById("deleteBtn").disabled = true;
+        
+        // eslint-disable-next-line no-restricted-globals
+        const isConfirmed = confirm('Are you sure you want to delete this account, All the data will be deleted permanently?');
+
+if(isConfirmed) {
+    // do something if the user has confirmed
+    setIsDeleted = true;
+    setEmail="";
+    email="np57411n@pace.edu"
+    window.location.replace('http://localhost:3000/');
+} else {
+    // do something else if the user declined
+    document.getElementById("deleteBtn").disabled = false;
+}
+    };
+
+    
   return (
-    <div>
+        <div>
 
-        <div className="container-fluid p-3">
+    <div className="container-fluid p-3">
             <div className="row">
                 <div className="col-md-3 col-sm-6">
                     <Link to={`/`} className="navbar-brand">
@@ -20,13 +49,14 @@ export const Frequently_Asked_Questions = () => {
                 <div className="order-lg-last col-lg-5 col-sm-8 col-8 ms-auto">
                     <div className="float-end dropdown">
                         {
-                            email ? 
+                            setEmail ? 
                             <div>
                             <a className="btn btn-light dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Hi {email}
+                            Hi {setEmail}
                         </a>
                         <ul className="dropdown-menu" style={{zIndex:"1"}} aria-labelledby="dropdownMenuLink">
-                            <li><a className="dropdown-item" href="#">Profile</a></li>
+                            {/* <li><a className="dropdown-item" href="#">Profile</a></li> */}
+                            <Link to={`/UserProfile`} className="dropdown-item">Profile</Link>
                             <li><a className="dropdown-item" href="#">Orders</a></li>
                             <li><a className="dropdown-item" href="#">Sign out</a></li>
                         </ul>
@@ -46,7 +76,7 @@ export const Frequently_Asked_Questions = () => {
             </div>
         </div>
         
-            <div>
+        <div>
                 <nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top" style={{zIndex:"-1"}}>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                         <span className="navbar-toggler-icon"></span>
@@ -67,65 +97,45 @@ export const Frequently_Asked_Questions = () => {
                         </ul>
                     </div>
                 </nav>
-            </div>
-
-        <section id="portfolio" class="portfolio">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title" style={{height:'550px'}}>
-            <h2>Frequently Asked Questions</h2>
-            
-                <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h3 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Account Related
-                    </button>
-                    </h3>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <h4>How can I make a Flaunt account?</h4>
-                        <p>Just click on the 'Sign In' button on the top right-hand corner of the page and register using email address. Fill in your name and password.
-                        Yes, it is that simple.</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Order Related
-                    </button>
-                    </h3>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <h4>How can I make a Flaunt account?</h4>
-                        <p>Just click on the 'Sign In' button on the top right-hand corner of the page and register using email address. Fill in your name and password.
-                        Yes, it is that simple.</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header" id="headingThree">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Shipping Related
-                    </button>
-                    </h3>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <h4>How can I make a Flaunt account?</h4>
-                        <p>Just click on the 'Sign In' button on the top right-hand corner of the page and register using email address. Fill in your name and password.
-                        Yes, it is that simple.</p>
-                    </div>
-                    </div>
-                </div>            
-                
-                </div>
-            </div>
-
-
-
         </div>
+
+        {/* <!-- ============== SECTION PAGETOP ============== --> */}
+        <section class="bg-primary padding-y-sm p-2">
+        <div class="container">
+        
+        <ol class="breadcrumb ondark mb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Profile</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Account main</li>
+        </ol>
+        
+        </div> 
+        {/* <!-- container //  --> */}
         </section>
+    {/* <!-- ============== SECTION PAGETOP END// ============== --> */}
+
+        
+        {/* <!-- ============== SECTION CONTENT ============== --> */}
+        <section class="padding-y bg-light mt-3">
+        <div class="container">
+        
+        <Alert variant="success">
+      <Alert.Heading>Order Successfully Placed</Alert.Heading>
+      <p>
+        <b>Order Id:</b> 129048.
+      </p>
+      <p>Your Order is successfully placed and you will receive email confirmation for the same on the registered email address.</p>
+    </Alert>
+        <br /><br />
+        
+        
+        </div> 
+        </section>
+        {/* <!-- ============== SECTION CONTENT END// ============== --> */}
+        {/* </article> */}
     </div>
+
+    
+    
   )
 }
