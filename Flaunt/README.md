@@ -14,6 +14,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+Shopping cart npms to install
+
+For react bootstrap
+### `npm install react-bootstrap`
+
+For react icons
+### `npm intstall react-icons`
+
+For react page routing
+### `npm install react-router-dom`
+
+Install faker to generate random Json data 
+### `npm install faker (used to generate random fake content)`
+faker is deprecated - use @faker-js/faker
+Switch is deprecated - So use Routes
+
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
